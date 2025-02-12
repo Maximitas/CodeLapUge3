@@ -8,6 +8,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,4 +24,10 @@ public class Student {
     private String email;
     private String name;
     private LocalDateTime updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+
 }

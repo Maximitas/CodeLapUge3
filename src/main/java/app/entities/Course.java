@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,4 +24,7 @@ public class Course {
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
+
+    @OneToMany(mappedBy = "Course", cascade = CascadeType.ALL)
+    private List<Student> students;
 }
